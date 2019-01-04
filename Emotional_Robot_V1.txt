@@ -1,4 +1,5 @@
 //Part of the source code is referenced from Getting Started with Processing co-authored by Casey Reas and Ben Fry.
+//Control the robot with button is better.
 
 var easing = 0.1;
 var x = 5;
@@ -27,11 +28,79 @@ function setup() {
 	// strokeWeight(2);
 	ellipseMode(RADIUS);
 	
-	Calm.stop();
-	Happy.stop();
-	Sad.stop();
+	textSize(20);
+	noStroke();
+	
+	button1 = createButton('happy');
+	button1.position(50, 85);
+	button1.mousePressed(Button1);
+	button1.size(70, 30);
+	
+	button2 = createButton('sad');
+	button2.position(135, 85);
+	button2.mousePressed(Button2);
+	button2.size(70, 30);
+	
+	button3 = createButton('calm');
+	button3.position(220, 85);
+	button3.mousePressed(Button3);
+	button3.size(70, 30);
+
+	show = createElement('h2', 'How are you today?');
+	show.position(50, 5);
 
 }
+
+function Button1() {
+
+        Calm.stop();
+	Happy.loop();
+	Sad.stop();
+      
+	colorValueBg = "#fff8dc";
+	colorValue1 = "#ff6a6a";
+	colorValue2 = "#ffc1c1";
+	colorValue3 = "#8b3a3a";
+	VneckHeight = 70;
+	VbodyHeight = 160;
+	
+}
+     
+function Button2() {
+	
+        Calm.stop();
+	Happy.stop();
+	Sad.loop();
+      
+	colorValueBg = "#cccccc";
+	colorValue1 = "#666666";
+	colorValue2 = "#000000";
+	colorValue3 = "#ffffff";
+	VneckHeight = 16;
+	VbodyHeight = 90;
+		
+}
+
+function Button3() {
+	
+	//emotion = input.value();
+	//show.html('I am ' + emotion + ' now.');
+	//input.value(' ');
+		
+        Calm.loop();
+        Happy.stop();
+	Sad.stop();
+      
+	colorValueBg = "#f4ffff";
+	colorValue1 = "#76eec6";
+	colorValue2 = "#8deeee";
+	colorValue3 = "#458b74";
+	VneckHeight = 70;
+	VbodyHeight = 160;	
+		
+}
+     
+
 
 function keyTyped () {
 	
