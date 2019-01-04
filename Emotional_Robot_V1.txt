@@ -1,3 +1,10 @@
+/* How to operate the program:
+   The shape and color of the robot and the soundtrack will change(to visualize your emotions) based on different keys you hit(different keys represents different emotions)
+   1.Hit key h/H means you're happy. 
+   2.Hit key s/S means you're sad.
+   3.Hit key c/C means you're calm.
+*/
+
 var easing = 0.1;
 var x = 5;
 var y = 600;
