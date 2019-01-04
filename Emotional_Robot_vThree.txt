@@ -1,3 +1,5 @@
+// For best viewing results, please use Chrome to see the online program. link:https://www.openprocessing.org/sketch/606798
+
 var army,armyo,army1,armyo1,legx1,legx2,legSpeed1,legSpeed2, bezierhappy1, bezierhappy1n,legX1Speed,legX2Speed,legX1Position,legX2Position;
 var pupilX1,pupilX2,pupilY;
 var buttonValue = 'back';
