@@ -1,3 +1,5 @@
+//Part of the source code is referenced from Getting Started with Processing co-authored by Casey Reas and Ben Fry.
+
 var easing = 0.1;
 var x = 5;
 var y = 600;
