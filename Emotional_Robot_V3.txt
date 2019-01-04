@@ -12,6 +12,8 @@ var Vb = true;
 var windowHeight1 = 800;
 var aString = 'Back to Welcome Page';
 
+//Ask for help
+
 var easing = 0.1;
 
 function preload() {
