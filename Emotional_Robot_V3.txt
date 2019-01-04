@@ -13,6 +13,7 @@ var windowHeight1 = 800;
 var aString = 'Back to Welcome Page';
 
 //Ask for help
+//May be there exists some incompatibility problems for Safari to load p5js programs.
 
 var easing = 0.1;
 
