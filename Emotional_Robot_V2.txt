@@ -1,0 +1,132 @@
+function preload() {
+     Calm = loadSound("Calm.mp3");
+     Happy = loadSound("Happy.mp3");
+     Sad = loadSound("Sad.mp3");
+}
+
+var x = 5;
+var y = 600;
+var radius = 45;
+var VbodyHeight = 160;
+var VneckHeight = 70;
+var colorValueBg = "#f4ffff";
+var colorValue1 = "#76eec6";
+var colorValue2 = "#8deeee";
+var colorValue3 = "#458b74";
+
+var input, button, show, emotion, feeling;
+
+var easing = 0.1;
+
+function setup() {
+        createCanvas(windowWidth, windowHeight);
+	smooth();
+	// strokeWeight(2);
+	ellipseMode(RADIUS);
+	textSize(20);
+	noStroke();
+	// input = createInput('Input your emotion here', text);
+	// input.position(50, 65);
+	// input.size(200, 30);
+	// input.style('font-size', '15px', 'font-color', '#303030');
+
+	button1 = createButton('happy');
+	button1.position(50, 85);
+	button1.mousePressed(Button1);
+	button1.size(70, 30);
+	
+	button2 = createButton('sad');
+	button2.position(135, 85);
+	button2.mousePressed(Button2);
+	button2.size(70, 30);
+	
+	button3 = createButton('calm');
+	button3.position(220, 85);
+	button3.mousePressed(Button3);
+	button3.size(70, 30);
+
+	show = createElement('h2', 'How are you today?');
+	show.position(50, 5);
+}
+
+function Button1() {
+
+      
+        Calm.stop();
+	Happy.loop();
+	Sad.stop();
+      
+	colorValueBg = "#fff8dc";
+	colorValue1 = "#ff6a6a";
+	colorValue2 = "#ffc1c1";
+	colorValue3 = "#8b3a3a";
+	VneckHeight = 70;
+	VbodyHeight = 160;
+
+     }
+ 
+function Button3() {
+	
+		
+        Calm.loop();
+	Happy.stop();
+	Sad.stop();
+      
+	colorValueBg = "#f4ffff";
+	colorValue1 = "#76eec6";
+	colorValue2 = "#8deeee";
+	colorValue3 = "#458b74";
+	VneckHeight = 70;
+	VbodyHeight = 160;	
+		
+}
+		
+function Button2() {
+	
+	// emotion = input.value();
+	// show.html('I am ' + emotion + ' now.');
+	// input.value(' ');
+      
+        Calm.stop();
+	Happy.stop();
+	Sad.loop();
+      
+	colorValueBg = "#cccccc";
+	colorValue1 = "#666666";
+	colorValue2 = "#000000";
+	colorValue3 = "#ffffff";
+	VneckHeight = 16;
+	VbodyHeight = 90;
+		
+}
+
+function draw() {
+      
+      var targetX = mouseX;
+      x += (targetX-x)*easing;
+  
+      var ny = y - VbodyHeight - VneckHeight - radius;
+	
+      background(colorValueBg);
+
+      noStroke();
+      fill(colorValue1);
+      ellipse(x,y-33,33,33);
+      fill(colorValue2);
+      rect(x-45,y-VbodyHeight,90,VbodyHeight-33);
+      
+      stroke(0,0,0);
+      line(x+12,y-VbodyHeight,x+12,ny);
+      line(x+12,ny,x-18,ny-43);
+      line(x+12,ny,x+42,ny-99);
+      line(x+12,ny,x+78,ny+15);
+      
+      noStroke();
+      fill(colorValue2);
+      ellipse(x+12,ny,radius,radius);
+      fill(colorValue3);
+      ellipse(x+24,ny-6,14,14);
+      fill(colorValue2);
+      ellipse(x+24,ny-6,3,3);
+
+}
